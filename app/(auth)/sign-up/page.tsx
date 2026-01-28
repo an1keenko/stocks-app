@@ -1,8 +1,6 @@
 'use client';
 
-import React from 'react';
-
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import { useRouter } from 'next/navigation';
 
@@ -44,8 +42,8 @@ const SignUp = () => {
         router.push('/');
       }
     } catch (e) {
-      console.error('Sign-up error:', e);
-      toast.error('Sign-up failed', {
+      console.error(e);
+      toast.error('Sign up failed', {
         description: e instanceof Error ? e.message : 'Failed to create an account.',
       });
     }
@@ -53,7 +51,8 @@ const SignUp = () => {
 
   return (
     <>
-      <h1 className="form-title">Sign Up & Personalize </h1>
+      <h1 className="form-title">Sign Up & Personalize</h1>
+
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <InputField
           name="fullName"
@@ -67,7 +66,7 @@ const SignUp = () => {
         <InputField
           name="email"
           label="Email"
-          placeholder="contact@gmail.com"
+          placeholder="contact@jsmastery.com"
           register={register}
           error={errors.email}
           validation={{
@@ -91,7 +90,7 @@ const SignUp = () => {
 
         <SelectField
           name="investmentGoals"
-          label="Invesment Goals"
+          label="Investment Goals"
           placeholder="Select your investment goal"
           options={INVESTMENT_GOALS}
           control={control}
@@ -111,8 +110,8 @@ const SignUp = () => {
 
         <SelectField
           name="preferredIndustry"
-          label="Preffered Industry"
-          placeholder="Select your preffered industry"
+          label="Preferred Industry"
+          placeholder="Select your preferred industry"
           options={PREFERRED_INDUSTRIES}
           control={control}
           error={errors.preferredIndustry}
@@ -120,10 +119,10 @@ const SignUp = () => {
         />
 
         <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
-          {isSubmitting ? 'Creating account' : 'Start Your Investing Journey'}
+          {isSubmitting ? 'Creating Account' : 'Start Your Investing Journey'}
         </Button>
 
-        <FooterLink text="Already have an account" linkText="Sign in" href="/sign-in" />
+        <FooterLink text="Already have an account?" linkText="Sign in" href="/sign-in" />
       </form>
     </>
   );

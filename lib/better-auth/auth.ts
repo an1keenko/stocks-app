@@ -1,4 +1,4 @@
-import { connectToDatabase } from '@/DATABASE/mongoose';
+import { connectToDatabase } from '@/database/mongoose';
 import { betterAuth } from 'better-auth';
 import { mongodbAdapter } from 'better-auth/adapters/mongodb';
 import { nextCookies } from 'better-auth/next-js';
@@ -14,7 +14,7 @@ export const getAuth = async () => {
   if (!db) throw new Error('MongoDB connection not found');
 
   authInstance = betterAuth({
-    adapter: mongodbAdapter(db as any),
+    database: mongodbAdapter(db as any),
     secret: process.env.BETTER_AUTH_SECRET,
     baseURL: process.env.BETTER_AUTH_URL,
     emailAndPassword: {

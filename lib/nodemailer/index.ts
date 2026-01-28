@@ -13,7 +13,7 @@ export const sendWelcomeEmail = async ({ email, name, intro }: WelcomeEmailData)
   const htmlTemplate = WELCOME_EMAIL_TEMPLATE.replace('{{name}}', name).replace('{{intro}}', intro);
 
   const mailOptions = {
-    from: `"Signalist" <ihar.anikeyenka@gmail.com>`,
+    from: `"Signalist" <signalist@jsmastery.pro>`,
     to: email,
     subject: `Welcome to Signalist - your stock market toolkit is ready!`,
     text: 'Thanks for joining Signalist',
