@@ -7,7 +7,7 @@ import { NAV_ITEMS } from '@/lib/constants';
 
 import SearchCommand from '@/components/SearchCommand';
 
-const NavItems = ({ initialStocks }: { initialStocks: StockWithWatchlistStatus }) => {
+const NavItems = ({ initialStocks }: { initialStocks: StockWithWatchlistStatus[] }) => {
   const pathname = usePathname();
 
   const isActive = (path: string) => {

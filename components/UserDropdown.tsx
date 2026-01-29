@@ -19,7 +19,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-const UserDropdown = ({ user, initialStocks }: { user: User; initialStocks: StockWithWatchlistStatus }) => {
+const UserDropdown = ({ user, initialStocks }: { user: User; initialStocks: StockWithWatchlistStatus[] }) => {
   const router = useRouter();
 
   const handleSignOut = async () => {
