@@ -26,7 +26,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
         <div className="pb-6 lg:pb-8 flex-1">{children}</div>
       </section>
 
-      <section className="auth-right-section">
+      <section className="auth-right-section relative">
         <div className="z-10 relative lg:mt-4 lg:mb-16">
           <blockquote className="auth-blockquote">
             AnykeySignal turned my watchlist into a winning list. The alerts are spot-on, and I feel more confident
@@ -45,15 +45,13 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
 
-        <div className="flex-1 relative">
-          <Image
-            src="/assets/images/dashboard.png"
-            alt="Dashboard Preview"
-            width={1440}
-            height={1150}
-            className="auth-dashboard-preview absolute"
-          />
-        </div>
+        <Image
+          src="/assets/images/dashboard.png"
+          alt="Dashboard Preview"
+          width={1440}
+          height={1150}
+          className="auth-dashboard-preview absolute flex-1 bottom-0 translate-x-16"
+        />
       </section>
     </main>
   );
