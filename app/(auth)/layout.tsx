@@ -15,7 +15,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
       <section className="auth-left-section scrollbar-hide-default">
         <Link href="/" className="auth-logo">
           <Image
-            src="/assets/icons/logo.webp"
+            src="/assets/icons/logo.png"
             alt="AnykeySignal logo"
             width={140}
             height={32}
